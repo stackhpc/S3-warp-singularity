@@ -73,7 +73,7 @@ jobs:
         with:
           # context: ./images/
           push: true
-          tags: ${{ steps.image-meta.outputs.tags }}
+          tags: ${{ steps.image-meta.outputs.tags }},latest
           labels: ${{ steps.image-meta.outputs.labels }}
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
