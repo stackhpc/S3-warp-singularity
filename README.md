@@ -9,4 +9,6 @@ Benchmark S3-compliant object storage systems using [Warp](https://github.com/mi
 
 ## Usage 
 
+Fetch the `warp.sif` singularity image file by running `singularity build warp.sif docker://ghcr.io/stackhpc/s3-warp-singularity:<version-tag>` from the slurm login node.
+
 Edit the config variables at the top of the `submit-benchmarks-job.sh` script to your fit your test requirements then submit the benchmark job to slurm with `sbatch submit-benchmarks-job.sh`.
