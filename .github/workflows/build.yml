@@ -33,4 +33,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: stackhpc/S3-warp-singularity:latest
+          tags: stackhpc/s3-warp-singularity:latest
