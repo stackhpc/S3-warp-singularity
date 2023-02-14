@@ -5,7 +5,7 @@ Benchmark S3-compliant object storage systems using [Warp](https://github.com/mi
 ## Requirements
 
 - Access to an object storage system
-- A slurm cluster with [singularity](https://docs.sylabs.io/guides/latest/user-guide/) or [apptainer](https://apptainer.org/docs/user/latest/) installed (such that supplied via [Azimuth](https://github.com/stackhpc/azimuth))
+- A slurm cluster with [singularity](https://docs.sylabs.io/guides/latest/user-guide/) or [apptainer](https://apptainer.org/docs/user/latest/) installed (such as that supplied via [Azimuth](https://github.com/stackhpc/azimuth))
 
 ## Usage 
 
