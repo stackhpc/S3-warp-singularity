@@ -15,9 +15,10 @@ S3_ADDRESS=fs-perf-dev-login-0:9000
 # Number of concurrent threads to use of S3 requests
 THREADS_PER_NODE=10
 # Number of test files to upload
-NUM_FILES=1000
-# Max size for any single test file
+NUM_FILES_PER_NODE=1000
+# Min/max size for any single test file
 MAX_FILE_SIZE=10MiB
+MIN_FILE_SIZE=1KiB
 # Duration for which the benchmark should run
 BENCHMARK_DURATION=5m
 # ----------------
@@ -34,8 +35,8 @@ singularity run warp.sif get \
     --access-key $S3_ACCESS_KEY \
     --secret-key $S3_SECRET_KEY \
     --concurrent $THREADS_PER_NODE \
-    --objects $NUM_FILES \
-    --obj.size $MAX_FILE_SIZE \
+    --objects $NUM_FILES_PER_NODE \
+    --obj.size "$MIN_FILE_SIZE,$MAX_FILE_SIZE" \
     --obj.randsize \
     --duration $BENCHMARK_DURATION \
     --no-color \
