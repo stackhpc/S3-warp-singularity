@@ -40,5 +40,3 @@ singularity run warp.sif get \
     --duration $BENCHMARK_DURATION \
     --no-color \
     --warp-client $CLIENT_NODES
-
-echo $NODELIST
