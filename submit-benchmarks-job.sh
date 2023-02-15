@@ -1,6 +1,6 @@
 #!/bin/sh
-# Slurm job config
-# SBATCH --nodes=2
+
+#SBATCH --nodes=2
 
 # Check required env vars are set 
 if [[ -z $S3_ACCESS_KEY || -z $S3_SECRET_KEY ]]; then
