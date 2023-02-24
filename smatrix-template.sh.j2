@@ -2,6 +2,7 @@
 #SBATCH --job-name=warp-benchmark-run
 #SBATCH --nodes={{ item.nodes }}
 #SBATCH --dependency=singleton
+#SBATCH --partition={{ partition }}
 
 # Check required env vars are set 
 if [[ -z $S3_ENDPOINT || -z $S3_ACCESS_KEY || -z $S3_SECRET_KEY ]]; then
@@ -29,7 +30,7 @@ srun --spread-job singularity run warp.sif client --no-color &
 CLIENT_NODES=$(scontrol show hostname $SLURM_JOB_NODELIST | paste -d, -s)
 
 #FIXME: Remove for proper test runs
-sleep $BENCHMARK_DURATION
+sleep 30
 
 # Trigger benchmark run on all clients
 # singularity run warp.sif get \
