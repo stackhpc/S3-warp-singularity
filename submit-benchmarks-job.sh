@@ -27,7 +27,7 @@ BENCHMARK_DURATION=5m
 srun --spread-job singularity run warp.sif client --no-color &
 
 #Unpack list of nodes which have a warp client running
-CLIENT_NODES=$(scontrol show hostname $SLURN_JOB_NODELIST | paste -d, -s)
+CLIENT_NODES=$(scontrol show hostname $SLURM_JOB_NODELIST | paste -d, -s)
 
 # Trigger benchmark run on all clients
 singularity run warp.sif get \
