@@ -4,6 +4,7 @@
 #SBATCH --n-tasks-per-node={{ item.threads }}
 #SBATCH --dependency=singleton
 #SBATCH --partition={{ partition }}
+#SBATCH --account={{ account }}
 
 # Check required env vars are set 
 if [[ -z $S3_ENDPOINT || -z $S3_ACCESS_KEY || -z $S3_SECRET_KEY ]]; then
