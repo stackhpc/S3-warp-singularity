@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+  gather_facts: no
+  vars:
+    smatrix_template_src: "smatrix-template.sh.j2"
+    smatrix_dimensions:
+      nodes: [1, 2, 8]
+      threads: [5, 10]
+      num_files: [100, 1000]
+      min_file_size: ["1KiB"]
+      max_file_size: ["10MiB"]
+      duration: ["1m"]
+    # smatrix_dryrun: true
+    partition: stackhpc
+    account: stackhpc
+  tasks:
+    - name: Test import
+      import_role:
+        name: smatrix
+  
