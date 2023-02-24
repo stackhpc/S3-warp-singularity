@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 #SBATCH --job-name=warp-benchmark-run
 #SBATCH --nodes={{ item.nodes }}
+#SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task={{ item.threads }}
 #SBATCH --dependency=singleton
 #SBATCH --partition={{ partition }}
