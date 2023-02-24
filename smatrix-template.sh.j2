@@ -13,6 +13,12 @@ if [[ -z $S3_ENDPOINT || -z $S3_ACCESS_KEY || -z $S3_SECRET_KEY ]]; then
     exit 1
 fi
 
+# Print a message about the git status of the checked out repo version
+echo "Git repo local checkout status: {{ smatrix_git_describe }}
+
+# Pull in docker image and build singularity image from it
+singularity build warp.sif docker://ghcr.io/stackhpc/s3-warp-singularity:latest
+
 # Benchmark config
 # ----------------
 # Number of concurrent threads to use of S3 requests
