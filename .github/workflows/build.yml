@@ -1,12 +1,11 @@
 ---
 name: Build and push Docker image
 on: 
-  workflow_dispatch: Image update
   push:
     paths:
       - Dockerfile
       - .github/workflows/**
-      
+
 jobs:
   build_push_api:
     name: Build and push Docker image
